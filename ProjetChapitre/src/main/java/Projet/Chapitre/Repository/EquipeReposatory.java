@@ -1,5 +1,11 @@
 package Projet.Chapitre.Repository;
 
-public interface EquipeReposatory {
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController @RequestMapping
+public interface EquipeReposatory {
+	@GetMapping
+	public Get
 }
