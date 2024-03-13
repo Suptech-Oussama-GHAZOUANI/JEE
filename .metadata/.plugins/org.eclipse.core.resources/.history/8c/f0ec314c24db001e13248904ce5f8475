@@ -1,5 +1,0 @@
-package Projet.Chapitre.Repository;
-
-public interface Repository {
-
-}
