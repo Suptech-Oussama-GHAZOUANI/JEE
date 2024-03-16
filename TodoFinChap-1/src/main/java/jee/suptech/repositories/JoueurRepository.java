@@ -11,8 +11,5 @@ import jee.suptech.entities.Joueur;
 public interface JoueurRepository extends JpaRepository<Joueur, Long> {
 	
 	public List<Joueur> findByEquipeNomEquipeAndPoste(String nomEquipe, String poste);
-	public List<Joueur> findByNomJoueur(String nomJoueur);
-	public List<Joueur> findByPoste(String poste);
 	public List<Joueur> findByEquipe(Equipe equipe);
-
 }

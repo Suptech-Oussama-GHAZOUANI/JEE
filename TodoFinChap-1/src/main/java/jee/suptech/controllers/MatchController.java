@@ -91,5 +91,16 @@ public class MatchController {
     public void deleteMatch(@PathVariable Long id) {
         matchRepository.deleteById(id);
     }
+    
+    @DeleteMapping("matches/passed")
+    public void deletePassedMatches() {
+        LocalDate today = LocalDate.now();
+        List<Match> matches = matchRepository.findAll();
+        for (Match match : matches) {
+            if (match.getDateMatch().isBefore(today)) {
+                matchRepository.delete(match);
+            }
+        }
+    }
 
 }

@@ -10,7 +10,6 @@ import jee.suptech.entities.Stade;
 import jee.suptech.repositories.MatchRepository;
 import jee.suptech.repositories.StadeRepository;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -59,15 +58,5 @@ public class StadeController {
         return match.getStade();
     }
     
-    @DeleteMapping("matches/passed")
-    public void deletePassedMatches() {
-        LocalDate today = LocalDate.now();
-        List<Match> matches = matchRepository.findAll();
-        for (Match match : matches) {
-            if (match.getDateMatch().isBefore(today)) {
-                matchRepository.delete(match);
-            }
-        }
-    }
 
 }
