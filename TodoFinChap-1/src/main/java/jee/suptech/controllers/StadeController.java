@@ -50,7 +50,7 @@ public class StadeController {
         stadeRepository.deleteById(id);
     }
     
-    @GetMapping("match/{id}/stade")
+    @GetMapping("stade/match/{id}")
     public Stade getStadeByMatchId(@PathVariable Long id) {
         Match match = matchRepository.findByIdMatch(id).orElseThrow(() -> new ResponseStatusException(
             HttpStatus.NOT_FOUND, "Match not found with id " + id
@@ -58,5 +58,4 @@ public class StadeController {
         return match.getStade();
     }
     
-
 }

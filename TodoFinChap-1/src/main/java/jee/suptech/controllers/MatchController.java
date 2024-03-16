@@ -39,7 +39,7 @@ public class MatchController {
 	         Optional<Equipe> equipe2=equipeRepository.findById(idequipe2);
 		     Optional<Arbitre> arbitre=arbitreRepository.findById(idarbitre);
 		     Optional<Stade> stade=stadeRepository.findById(idstade);
-		     if (equipe2.isPresent() & arbitre.isPresent() & stade.isPresent() & equipe1.isPresent()) {
+		     if (equipe1.isPresent() & equipe2.isPresent() & arbitre.isPresent() & stade.isPresent() ) {
 		    	 match.setArbitre(arbitre.get());
 	             match.setStade(stade.get());
 	             List<Equipe> equipes = new ArrayList<>();

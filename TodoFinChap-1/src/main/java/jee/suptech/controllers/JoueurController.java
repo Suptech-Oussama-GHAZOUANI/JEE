@@ -6,9 +6,11 @@ import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,10 +58,24 @@ public class JoueurController {
 	public List<Joueur> getJoueursByEquipeAndPoste(@PathVariable("nomEquipe") String nomEquipe, @PathVariable("poste") String poste) {
 	    return joueurRepository.findByEquipeNomEquipeAndPoste(nomEquipe, poste);
 	}
-
-
-
    
-   
+    @PutMapping("joueur/{id}")
+    public Joueur updateMatch(@PathVariable Long id, @RequestBody Joueur newJoueur) {
+        return joueurRepository.findById(id)
+                .map(joueur -> {
+                	joueur.setNomJoueur(newJoueur.getNomJoueur());
+                	joueur.setPoste(newJoueur.getPoste());
+                    return joueurRepository.save(joueur);
+                })
+                .orElseGet(() -> {
+                	newJoueur.setIdJoueur(id);
+                    return joueurRepository.save(newJoueur);
+                });
+    }
+    
+    @DeleteMapping("joueur/{id}")
+    public void deleteMatch(@PathVariable Long id) {
+    	joueurRepository.deleteById(id);
+    }
 }
    
