@@ -9,4 +9,6 @@ import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 @Repository
 public interface MatchRepository extends JpaRepository<Match, Long> {
     List<Match> findByDate(LocalDate date);
+    List<Match> findAll();
+    
 }

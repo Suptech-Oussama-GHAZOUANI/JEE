@@ -1,3 +1,5 @@
+package Service;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +12,9 @@ import Entities.Stadium;
 import Entities.Team;
 import Repositories.MatchRepository;
 import Repositories.PlayerRepository;
-import Repositories.StadiumRepository;
 import Repositories.TeamRepository;
 
-@Service 
+@Service
 public class MatchService {
     private final MatchRepository matchRepository;
     private final TeamRepository teamRepository;
@@ -24,7 +25,7 @@ public class MatchService {
         this.teamRepository = teamRepository;
         this.playerRepository = playerRepository;
     }
-
+    
     public List<Match> getAllMatches() {
         return matchRepository.findAll();
     }
@@ -89,16 +90,6 @@ public class MatchService {
             return playerRepository.findByTeam(team);
         }
         return new ArrayList<>();
-    }
-    
-    public class MatchController {
-        private final MatchService matchService;
-        private final TeamService teamService;
-
-        public MatchController(MatchService matchService, TeamService teamService) {
-            this.matchService = matchService;
-            this.teamService = teamService;
-        }
     }
 
     // Implement other methods as needed
