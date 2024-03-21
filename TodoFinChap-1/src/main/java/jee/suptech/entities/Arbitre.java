@@ -18,13 +18,13 @@ import lombok.NoArgsConstructor;
 public class Arbitre {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idArbitre;
-    private String nom;
-    private String nationalite;
+    Long idArbitre;
+    String nom;
+    String nationalite;
 
     @JsonIgnore
     @OneToMany(mappedBy = "arbitre")
-    private List<Match> matches;
+    List<Match> matches;
     
     // getters and setters
 }

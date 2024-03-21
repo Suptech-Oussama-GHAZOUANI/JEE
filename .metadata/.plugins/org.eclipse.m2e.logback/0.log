@@ -2324,3 +2324,24 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.apache.to
 2024-03-20 22:49:01,951 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\oussa\Desktop\sup tech\JEE\TodoFinChap-1\src\test\resources
 2024-03-20 22:54:26,883 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@77ac4326{STOPPING}[12.0.3,sto=0]
 2024-03-20 22:54:26,885 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@58fa954f{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2024-03-21 12:27:25,053 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-03-21 12:42:28,513 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.3; built: 2023-10-27T03:25:22.284Z; git: a873259fd5af141dedaa6c7fa8fe8fbdedce0d61; jvm 17.0.10+7
+2024-03-21 12:42:28,568 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@6b51260c{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@51836ace{STARTED}}
+2024-03-21 12:42:28,569 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2024-03-21 12:42:28,603 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@3be944b9{HTTP/1.1, (http/1.1)}{127.0.0.1:55628}
+2024-03-21 12:42:28,621 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@641b5468{STARTING}[12.0.3,sto=0] @979765ms
+2024-03-21 12:50:58,950 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-21 12:50:58,972 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-21 12:50:58,978 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\oussa\Desktop\sup tech\JEE\TodoFinChap-1\src\test\resources
+2024-03-21 12:51:39,394 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-21 12:51:39,401 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-21 12:51:39,407 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\oussa\Desktop\sup tech\JEE\TodoFinChap-1\src\test\resources
+2024-03-21 12:51:52,002 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-21 12:51:52,005 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-21 12:51:52,008 [Worker-22: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\oussa\Desktop\sup tech\JEE\TodoFinChap-1\src\test\resources
+2024-03-21 12:52:10,862 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-21 12:52:10,865 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-21 12:52:10,871 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\oussa\Desktop\sup tech\JEE\TodoFinChap-1\src\test\resources
+2024-03-21 13:01:02,804 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-03-21 13:01:02,811 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-03-21 13:01:02,817 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\oussa\Desktop\sup tech\JEE\TodoFinChap-1\src\test\resources

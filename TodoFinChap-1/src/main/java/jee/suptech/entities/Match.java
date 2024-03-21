@@ -18,16 +18,16 @@ import lombok.NoArgsConstructor;
 public class Match {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idMatch;
-    private LocalDate dateMatch;
-    private LocalTime heureMatch;
+    Long idMatch;
+    LocalDate dateMatch;
+    LocalTime heureMatch;
 
     @JsonIgnore
     @ManyToOne
-    private Arbitre arbitre;
+    Arbitre arbitre;
 
     @ManyToOne
-    private Stade stade;
+    Stade stade;
     
     @ManyToOne
     Equipe equipe1;

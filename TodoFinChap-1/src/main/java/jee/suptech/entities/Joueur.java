@@ -15,13 +15,13 @@ import lombok.NoArgsConstructor;
 public class Joueur {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idJoueur;
-    private String nomJoueur;
-    private String poste;
+    Long idJoueur;
+    String nomJoueur;
+    String poste;
 
     @JsonIgnore
     @ManyToOne
-    private Equipe equipe;
+    Equipe equipe;
     
     // getters and setters
 }

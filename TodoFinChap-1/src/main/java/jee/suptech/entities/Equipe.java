@@ -18,23 +18,23 @@ public class Equipe {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    private Long idEquipe;
-    private String nomEquipe;
-    private String pays;
+    Long idEquipe;
+    String nomEquipe;
+    String pays;
 
     @JsonIgnore
     @OneToMany(mappedBy = "equipe")
-    private List<Joueur> joueurs;
+    List<Joueur> joueurs;
     
     
     @JsonIgnore
     @OneToMany(mappedBy = "equipe1")
-    private List<Match> matchEquipe1;
+    List<Match> matchEquipe1;
     
     
     @JsonIgnore
     @OneToMany(mappedBy = "equipe2")
-    private List<Match> matchEquipe2;
+    List<Match> matchEquipe2;
 
     
     // getters and setters

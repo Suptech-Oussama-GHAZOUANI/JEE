@@ -10,6 +10,7 @@ import jee.suptech.entities.Equipe;
 
 @Repository
 public interface EquipeRepository extends JpaRepository<Equipe, Long> {
+	
     List<Equipe> findByPays(String pays);
     Optional<Equipe> findByNomEquipe(String nomEquipe);
 
