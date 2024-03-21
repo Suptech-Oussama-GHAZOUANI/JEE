@@ -17,13 +17,13 @@ import lombok.NoArgsConstructor;
 public class Stade {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idStade;
-    private String nomStade;
-    private String ville;
+    Long idStade;
+    String nomStade;
+    String ville;
 
     @JsonIgnore
     @OneToMany(mappedBy = "stade")
-    private List<Match> matches;
+    List<Match> matches;
     
     // getters and setters
 }
