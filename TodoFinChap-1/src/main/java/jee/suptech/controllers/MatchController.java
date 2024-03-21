@@ -1,9 +1,7 @@
 package jee.suptech.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import jee.suptech.entities.Arbitre;
 import jee.suptech.entities.Equipe;
@@ -15,7 +13,7 @@ import jee.suptech.repositories.MatchRepository;
 import jee.suptech.repositories.StadeRepository;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,24 +30,21 @@ public class MatchController {
     @Autowired
     private StadeRepository stadeRepository;
     
-
     @PostMapping("match/1steq/{idequipe1}/2ndeq/{idequipe2}/arb/{idarbitre}/std/{idstade}")
-	public Match addMatch(@PathVariable ("idstade") Long idstade,@PathVariable ("idarbitre") Long idarbitre,@PathVariable ("idequipe1") Long idequipe1,@PathVariable ("idequipe2") Long idequipe2,@RequestBody Match match) {
-		     Optional<Equipe> equipe1=equipeRepository.findById(idequipe1);
-	         Optional<Equipe> equipe2=equipeRepository.findById(idequipe2);
-		     Optional<Arbitre> arbitre=arbitreRepository.findById(idarbitre);
-		     Optional<Stade> stade=stadeRepository.findById(idstade);
-		     if (equipe1.isPresent() & equipe2.isPresent() & arbitre.isPresent() & stade.isPresent() ) {
-		    	 match.setArbitre(arbitre.get());
-	             match.setStade(stade.get());
-	             List<Equipe> equipes = new ArrayList<>();
-	             equipes.add(equipe1.get());
-	             equipes.add(equipe2.get());
-	             match.setEquipes(equipes);
-		    	 return matchRepository.save(match);
-		     }
-		    	return null;  
-	       }
+	public Match addGame(@PathVariable ("idstade") Long idstade,@PathVariable ("idarbitre") Long idarbitre,@PathVariable ("idequipe1") Long idequipe1,@PathVariable ("idequipe2") Long idequipe2,@RequestBody Match match) {
+	    Optional<Arbitre> arbitre=arbitreRepository.findById(idarbitre);
+	    Optional<Stade> stade=stadeRepository.findById(idstade);
+	    Optional<Equipe>  equipe1 = equipeRepository.findById(idequipe1);
+	    Optional<Equipe> equipe2 = equipeRepository.findById(idequipe2);
+	    match.setEquipe1(equipe1.get());
+	    match.setEquipe2(equipe2.get());
+	    match.setArbitre(arbitre.get());
+	    match.setStade(stade.get());
+ 
+	
+	    return matchRepository.save(match);
+	}
+    
 
     @GetMapping("matches")
     public List<Match> getAllMatches() {
@@ -62,14 +57,15 @@ public class MatchController {
         return matchRepository.findByDateMatch(localDate);
     }
 
-    @GetMapping("matches/id/{id}")
-    public Match getMatchById(@PathVariable Long id) {
+
+    @GetMapping("matche/{id}/equipes")
+    public List<Equipe> getEquipesByMatchId(@PathVariable Long id) {
         Optional<Match> optionalMatch = matchRepository.findByIdMatch(id);
         if (optionalMatch.isPresent()) {
-            return optionalMatch.get();
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Match not found");
+            Match match = optionalMatch.get();
+            return Arrays.asList(match.getEquipe1(), match.getEquipe2());
         }
+        return null;
     }
 
     

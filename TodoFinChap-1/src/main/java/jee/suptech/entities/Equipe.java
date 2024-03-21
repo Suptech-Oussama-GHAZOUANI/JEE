@@ -8,7 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,9 +25,17 @@ public class Equipe {
     @JsonIgnore
     @OneToMany(mappedBy = "equipe")
     private List<Joueur> joueurs;
+    
+    
     @JsonIgnore
-    @ManyToMany(mappedBy = "equipes")
-    private List<Match> matches;
+    @OneToMany(mappedBy = "equipe1")
+    private List<Match> matchEquipe1;
+    
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "equipe2")
+    private List<Match> matchEquipe2;
+
     
     // getters and setters
 }
